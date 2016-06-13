@@ -8,10 +8,7 @@ class Property
     @columnName = options.key?("columnName") ? options["columnName"] : String.new
   end
   def to_json(*a)
-    {
-      "class" => self.class.name,
-      "data" => {"name" => @name, "tableName" => @tableName, "audited" => @audited, "isReadOnly" => @isReadOnly, "columnName" => @columnName }
-    }.to_json(*a)
+    {"name" => @name, "tableName" => @tableName, "audited" => @audited, "isReadOnly" => @isReadOnly, "columnName" => @columnName }.to_json(*a)
   end
   def to_hash(*a)
     {"name" => @name, "tableName" => @tableName, "audited" => @audited, "isReadOnly" => @isReadOnly, "columnName" => @columnName }

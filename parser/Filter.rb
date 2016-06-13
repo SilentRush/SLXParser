@@ -6,10 +6,7 @@ class Filter
     @propertyName  = options.key?("propertyName") ? options["propertyName"] : String.new
   end
   def to_json(*a)
-    {
-      "class" => self.class.name,
-      "data" => {"name" => @name, "type" => @type, "propertyName" => @propertyName }
-    }.to_json(*a)
+    {"name" => @name, "type" => @type, "propertyName" => @propertyName }.to_json(*a)
   end
   def to_hash(*a)
     {"name" => @name, "type" => @type, "propertyName" => @propertyName }

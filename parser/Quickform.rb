@@ -9,10 +9,7 @@ class Quickform
     @rows = options.key?("rows") ? options["rows"] : Array.new
   end
   def to_json(*a)
-    {
-      "class" => self.class.name,
-      "data" => {"name" => @name, "entity_type" => @entity_type, "loadactions" => @loadactions, "controls" => @controls, "columns" => @columns, "rows" => @rows }
-    }.to_json(*a)
+    {"name" => @name, "entity_type" => @entity_type, "loadactions" => @loadactions, "controls" => @controls, "columns" => @columns, "rows" => @rows }.to_json(*a)
   end
   def to_hash(*a)
     {"name" => @name, "entity_type" => @entity_type, "loadactions" => @loadactions, "controls" => @controls, "columns" => @columns, "rows" => @rows }

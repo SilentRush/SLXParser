@@ -9,10 +9,7 @@ class Meth
     @primaryExecute = options.key?("primaryExecute") ? options["primaryExecute"] : Array.new
   end
   def to_json(*a)
-    {
-      "class" => self.class.name,
-      "data" => {"name" => @name, "returnType" => @returnType, "methodType" => @methodType, "preExecute" => @preExecute, "postExecute" => @postExecute, "primaryExecute" => @primaryExecute }
-    }.to_json(*a)
+    {"name" => @name, "returnType" => @returnType, "methodType" => @methodType, "preExecute" => @preExecute, "postExecute" => @postExecute, "primaryExecute" => @primaryExecute }.to_json(*a)
   end
   def to_hash(*a)
     {"name" => @name, "returnType" => @returnType, "methodType" => @methodType, "preExecute" => @preExecute, "postExecute" => @postExecute, "primaryExecute" => @primaryExecute }

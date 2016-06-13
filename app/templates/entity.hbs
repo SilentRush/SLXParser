@@ -1,4 +1,4 @@
-<h1>{{model.data.name}}</h1>
+<h1>{{model.first.name}}</h1>
 <ul class="nav nav-tabs">
   <li class="active"><a data-target="#quickforms" data-toggle="tab">Quickforms</a></li>
   <li><a data-target="#properties" data-toggle="tab">Properties</a></li>
@@ -7,62 +7,62 @@
 </ul>
 <div class="tab-content">
   <div class="tab-pane active" id="quickforms">
-    {{#each model.data.quickforms as |quickform|}}
+    {{#each model.quickforms as |quickform|}}
     <div class="collapseDiv" {{action 'toggleDiv'}}>
-      <b>{{quickform.data.name}}</b><br />
+      <b>{{quickform.name}}</b><br />
         <div class="collapseContent">
-          Entity Type: {{quickform.data.entity_type}}<br />
-          Columns: {{quickform.data.columns}}<br />
-          Rows: {{quickform.data.rows}}<br />
+          Entity Type: {{quickform.entity_type}}<br />
+          Columns: {{quickform.columns}}<br />
+          Rows: {{quickform.rows}}<br />
         </div>
       </div>
     {{/each}}
   </div>
   <div class="tab-pane" id="properties">
-    {{#each model.data.properties as |property|}}
+    {{#each model.properties as |property|}}
     <div class="collapseDiv" {{action 'toggleDiv'}}>
-      <b>{{property.data.name}}</b><br />
+      <b>{{property.name}}</b><br />
       <div class="collapseContent">
-        Column Name: {{property.data.columnName}}<br />
-        Table Name: {{property.data.tableName}}<br />
-        Audited: {{property.data.audited}}<br />
-        isReadOnly: {{property.data.isReadOnly}}<br />
+        Column Name: {{property.columnName}}<br />
+        Table Name: {{property.tableName}}<br />
+        Audited: {{property.audited}}<br />
+        isReadOnly: {{property.isReadOnly}}<br />
       </div>
       </div>
     {{/each}}
   </div>
   <div class="tab-pane" id="filters">
-    {{#each model.data.filters as |filter|}}
+    {{#each model.filters as |filter|}}
     <div class="collapseDiv" {{action 'toggleDiv'}}>
-      <b>{{filter.data.name}}</b><br />
+      <b>{{filter.name}}</b><br />
       <div class="collapseContent">
-        Type Name: {{filter.data.type}}<br />
-        Property Name: {{filter.data.propertyName}}<br />
+        Type Name: {{filter.type}}<br />
+        Property Name: {{filter.propertyName}}<br />
       </div>
       </div>
     {{/each}}
   </div>
   <div class="tab-pane" id="methods">
-    {{#each model.data.methods as |method|}}
+    {{#each model.methods as |method|}}
     <div class="collapseDiv" {{action 'toggleDiv'}}>
-      <b>{{method.data.name}}</b><br />
+      <b>{{method.name}}</b><br />
       <div class="collapseContent">
-        Return Type: {{method.data.returnType}}<br />
-        Method Type: {{method.data.methodType}}<br />
+        Return Type: {{method.returnType}}<br />
+        Method Type: {{method.methodType}}<br />
         Pre Execute Steps:<br />
-        {{#each method.data.preExecute as |pre|}}
+        {{#each method.preExecute as |pre|}}
           Target Type: {{pre.targetType}}<br />
           Target Method: {{pre.targetMethod}}<br />
           Active: {{pre.active}}<br />
         {{/each}}
         Primary Execute Steps:<br />
-        {{#each method.data.primaryExecute as |primary|}}
+        {{#each method.primaryExecute as |primary|}}
           Target Type: {{primary.targetType}}<br />
           Target Method: {{primary.targetMethod}}<br />
           Active: {{primary.active}}<br />
         {{/each}}
         Post Execute Steps:<br />
-        {{#each method.data.postExecute as |post|}}
+        {{#each method.postExecute as |post|}}
           Target Type: {{post.targetType}}<br />
           Target Method: {{post.targetMethod}}<br />
           Active: {{post.active}}<br />

@@ -13,10 +13,7 @@ class Entity
   end
 
   def to_json(*a)
-    {
-      "class" => self.class.name,
-      "data" => {"name" => @name, "quickforms" => @quickforms, "methods" => @methods, "filters" => @filters, "properties" => @properties }
-    }.to_json(*a)
+    {"name" => @name, "quickforms" => @quickforms, "methods" => @methods, "filters" => @filters, "properties" => @properties }.to_json(*a)
   end
   def to_hash(*a)
     {"name" => @name, "quickforms" => @quickforms, "methods" => @methods, "filters" => @filters, "properties" => @properties }
